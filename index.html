@@ -56,11 +56,326 @@
   }
 }
 </script>
-<script type="module" src="/index.tsx" defer></script>
 <link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-brand-dark text-brand-light">
-    <div id="root"></div>
+    <div class="min-h-screen bg-brand-dark font-sans antialiased relative overflow-x-hidden">
+      <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top,_rgba(56,139,253,0.1)_0%,_rgba(13,17,23,0)_25%)]"></div>
+      <div class="relative z-10">
+        
+        <header class="sticky top-0 z-50 bg-brand-dark/80 backdrop-blur-lg border-b border-brand-dark-secondary">
+          <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
+                <path d="M6 9.25C6 5.514 9.134 2.5 13 2.5H35C38.866 2.5 42 5.514 42 9.25V24C42 33 34 45.5 24 45.5C14 45.5 6 33 6 24V9.25Z" fill="#1F3A5F" stroke="#444c56" stroke-width="1.5"/>
+                <path d="M6 24C16.667 25.333 22.5 32 30.5 30C38.5 28 42 24 42 24V30C42 36 36 40 30.5 40C20.9 40 12.4 32.2 6 28.5V24Z" fill="#65C6BB"/>
+              </svg>
+              <span class="text-2xl font-bold text-white">PrivSurf</span>
+            </div>
+            <span class="border border-brand-blue text-brand-light font-semibold px-6 py-2 rounded-lg">
+              Launching Soon
+            </span>
+          </div>
+        </header>
+
+        <main>
+          <section class="py-20 md:py-32 animate-fade-in-up">
+            <div class="container mx-auto px-6 text-center">
+              <div class="max-w-4xl mx-auto">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 mx-auto mb-8">
+                  <path d="M6 9.25C6 5.514 9.134 2.5 13 2.5H35C38.866 2.5 42 5.514 42 9.25V24C42 33 34 45.5 24 45.5C14 45.5 6 33 6 24V9.25Z" fill="#1F3A5F" stroke="#444c56" stroke-width="1.5"/>
+                  <path d="M6 24C16.667 25.333 22.5 32 30.5 30C38.5 28 42 24 42 24V30C42 36 36 40 30.5 40C20.9 40 12.4 32.2 6 28.5V24Z" fill="#65C6BB"/>
+                </svg>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                  Your All-in-One <span class="bg-gradient-to-r from-brand-blue to-brand-purple text-transparent bg-clip-text">Privacy & Security</span> Solution
+                </h1>
+                <p class="text-lg md:text-xl text-brand-light-secondary max-w-2xl mx-auto mb-8">
+                  In today's digital world, your personal data is constantly at risk. PrivSurf is the simple, powerful solution that puts you back in control.
+                </p>
+                <div class="inline-block border-2 border-brand-blue text-brand-light font-bold px-10 py-4 rounded-lg text-lg tracking-wider">
+                  Launching Soon
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="features" class="py-20 bg-brand-dark">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up" style="animation-delay: 200ms">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">What Makes PrivSurf Different?</h2>
+                    <p class="text-lg text-brand-light-secondary">
+                        A seamless, all-in-one extension designed to protect your privacy and secure your browsing without compromises.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-16 animate-fade-in-up" style="animation-delay: 400ms">
+                    <div class="bg-brand-dark-secondary p-6 rounded-xl border border-gray-800/50 transition-all duration-300 hover:border-brand-blue/50 hover:shadow-2xl hover:shadow-brand-blue/10">
+                        <div class="flex items-center space-x-4 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-brand-purple">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V7.5a2.25 2.25 0 0 0-2.25-2.25H7.5A2.25 2.25 0 0 0 5.25 7.5v9.75a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+                            </svg>
+                            <h3 class="text-xl font-bold text-white">Absolute Privacy, Built-In</h3>
+                        </div>
+                        <p class="text-brand-light-secondary">Our unique on-device AI and Machine Learning engine ensures all security analysis happens locally. Your data never leaves your device.</p>
+                    </div>
+                    <div class="bg-brand-dark-secondary p-6 rounded-xl border border-gray-800/50 transition-all duration-300 hover:border-brand-blue/50 hover:shadow-2xl hover:shadow-brand-blue/10">
+                        <div class="flex items-center space-x-4 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-brand-green">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9.75l-9-5.25M12 12.75l9 5.25" />
+                            </svg>
+                            <h3 class="text-xl font-bold text-white">A Complete Privacy Suite</h3>
+                        </div>
+                        <p class="text-brand-light-secondary">No need to juggle multiple extensions. PrivSurf combines all the tools you need into a single, seamless solution for total peace of mind.</p>
+                    </div>
+                    <div class="bg-brand-dark-secondary p-6 rounded-xl border border-gray-800/50 transition-all duration-300 hover:border-brand-blue/50 hover:shadow-2xl hover:shadow-brand-blue/10">
+                        <div class="flex items-center space-x-4 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-brand-purple">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 15.75-2.489-2.489m0 0a3.375 3.375 0 1 0-4.773-4.773 3.375 3.375 0 0 0 4.774 4.774ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            <h3 class="text-xl font-bold text-white">AI-Powered Risk Scanner</h3>
+                        </div>
+                        <p class="text-brand-light-secondary">Analyzes other extensions for threats, demonstrating our powerful security engine and commitment to a safer web for everyone.</p>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in-up" style="animation-delay: 600ms">
+                    <div class="bg-brand-dark-secondary p-6 rounded-xl border border-gray-800/50 transition-all duration-300 hover:border-brand-blue/50 hover:shadow-2xl hover:shadow-brand-blue/10">
+                        <div class="flex items-center space-x-4 mb-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-brand-blue">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                          </svg>
+                          <h3 class="text-xl font-bold text-white">Ad & Tracker Blocker</h3>
+                        </div>
+                        <p class="text-brand-light-secondary">Stop invasive ads and prevent hidden trackers from following you across the web.</p>
+                    </div>
+                    <div class="bg-brand-dark-secondary p-6 rounded-xl border border-gray-800/50 transition-all duration-300 hover:border-brand-blue/50 hover:shadow-2xl hover:shadow-brand-blue/10">
+                        <div class="flex items-center space-x-4 mb-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-brand-blue">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                          </svg>
+                          <h3 class="text-xl font-bold text-white">Secure Browsing</h3>
+                        </div>
+                        <p class="text-brand-light-secondary">Our AI actively identifies and blocks malicious sites and phishing attempts in real-time.</p>
+                    </div>
+                    <div class="bg-brand-dark-secondary p-6 rounded-xl border border-gray-800/50 transition-all duration-300 hover:border-brand-blue/50 hover:shadow-2xl hover:shadow-brand-blue/10">
+                        <div class="flex items-center space-x-4 mb-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-brand-blue">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
+                          </svg>
+                          <h3 class="text-xl font-bold text-white">GenAI Content Filtering</h3>
+                        </div>
+                        <p class="text-brand-light-secondary">Proactively helps prevent display of sensitive content on Generative AI websites.</p>
+                    </div>
+                    <div class="bg-brand-dark-secondary p-6 rounded-xl border border-gray-800/50 transition-all duration-300 hover:border-brand-blue/50 hover:shadow-2xl hover:shadow-brand-blue/10">
+                        <div class="flex items-center space-x-4 mb-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-brand-blue">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 12h-2.25m-1.166 5.834L15.409 15m-4.242 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672Zm-7.5-3.515a2.25 2.25 0 0 1-2.25-2.25V9A2.25 2.25 0 0 1 6 6.75h1.5" />
+                          </svg>
+                          <h3 class="text-xl font-bold text-white">Simple & Intuitive</h3>
+                        </div>
+                        <p class="text-brand-light-secondary">Just install and get instant protection. No complicated settings or configurations.</p>
+                    </div>
+                </div>
+            </div>
+          </section>
+          
+          <section class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Choose PrivSurf?</h2>
+                    <p class="text-lg text-brand-light-secondary">
+                        With PrivSurf, you can finally browse the internet with the security and peace of mind you deserve. Your privacy is our priority.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 animate-fade-in-up" style="animation-delay: 200ms">
+                    <div class="text-center p-8 bg-brand-dark-secondary rounded-2xl border border-transparent hover:border-brand-purple/50 transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="inline-block p-4 bg-gray-800 rounded-full mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-brand-purple">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 0 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Unmatched Privacy</h3>
+                        <p class="text-brand-light-secondary">Our local processing model ensures no third-party can ever access your browsing information. Your data is yours alone.</p>
+                    </div>
+                    <div class="text-center p-8 bg-brand-dark-secondary rounded-2xl border border-transparent hover:border-brand-purple/50 transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="inline-block p-4 bg-gray-800 rounded-full mb-6">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-brand-purple">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Comprehensive Security</h3>
+                        <p class="text-brand-light-secondary">Get a full-stack security solution that goes beyond basic ad blocking, extending to advanced GenAI content moderation.</p>
+                    </div>
+                    <div class="text-center p-8 bg-brand-dark-secondary rounded-2xl border border-transparent hover:border-brand-purple/50 transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="inline-block p-4 bg-gray-800 rounded-full mb-6">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-brand-purple">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 11.664 0l3.181-3.183m-3.181-4.991-3.181-3.183a8.25 8.25 0 0 0-11.664 0l-3.181 3.183m11.664 0-3.181 3.183" />
+                           </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Always Learning</h3>
+                        <p class="text-brand-light-secondary">Our on-device AI and ML engine continuously adapts to new threats and content, providing you with future-proof security.</p>
+                    </div>
+                </div>
+            </div>
+          </section>
+
+          <section id="scanner" class="py-20 md:py-28 bg-brand-dark">
+             <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12 animate-fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Scan Your Extensions for Risk</h2>
+                    <p class="text-lg text-brand-light-secondary">
+                        Is your browser extension safe? Paste its description from the web store below, and our on-device AI technology will analyze it for potential privacy and security risks.
+                    </p>
+                </div>
+
+                <div class="max-w-3xl mx-auto animate-fade-in-up" style="animation-delay: 200ms">
+                    <div class="bg-brand-dark-secondary p-4 rounded-xl border border-gray-800/50">
+                         <textarea
+                            id="extension-description"
+                            placeholder="Paste extension description here..."
+                            class="w-full h-40 bg-brand-dark text-brand-light p-4 rounded-lg border-2 border-gray-700 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/50 transition-colors duration-300 resize-none"
+                            aria-label="Extension description input"
+                         ></textarea>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <button
+                            id="scan-button"
+                            class="inline-block bg-gradient-to-r from-brand-blue to-brand-purple text-white font-bold px-12 py-4 rounded-lg text-lg hover:shadow-2xl hover:shadow-brand-blue/30 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100"
+                        >
+                            Scan for Risks Now
+                        </button>
+                    </div>
+                </div>
+
+                 <div id="scan-result" class="max-w-3xl mx-auto mt-10">
+                 </div>
+
+            </div>
+        </section>
+        </main>
+        
+        <footer class="bg-brand-dark-secondary border-t border-gray-800/50">
+          <div class="container mx-auto px-6 py-6 text-center text-brand-light-secondary">
+            <div class="flex items-center justify-center space-x-2 mb-2">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
+                    <path d="M6 9.25C6 5.514 9.134 2.5 13 2.5H35C38.866 2.5 42 5.514 42 9.25V24C42 33 34 45.5 24 45.5C14 45.5 6 33 6 24V9.25Z" fill="#1F3A5F" stroke="#444c56" stroke-width="1.5"></path>
+                    <path d="M6 24C16.667 25.333 22.5 32 30.5 30C38.5 28 42 24 42 24V30C42 36 36 40 30.5 40C20.9 40 12.4 32.2 6 28.5V24Z" fill="#65C6BB"></path>
+                </svg>
+                <span class="text-lg font-bold text-brand-light">PrivSurf</span>
+            </div>
+            <p>&copy; 2024 PrivSurf. All rights reserved. Your privacy is our priority.</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script type="module">
+        import { GoogleGenAI, Type } from '@google/genai';
+
+        const scanButton = document.getElementById('scan-button');
+        const descriptionInput = document.getElementById('extension-description');
+        const resultContainer = document.getElementById('scan-result');
+        
+        const riskStyles = {
+            Low: {
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>`,
+                textColor: 'text-green-400',
+                borderColor: 'border-green-500/30',
+                bgColor: 'bg-green-500/10',
+            },
+            Medium: {
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-yellow-400"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126Z" /></svg>`,
+                textColor: 'text-yellow-300',
+                borderColor: 'border-yellow-400/30',
+                bgColor: 'bg-yellow-400/10',
+            },
+            High: {
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-red-500"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" /></svg>`,
+                textColor: 'text-red-400',
+                borderColor: 'border-red-500/30',
+                bgColor: 'bg-red-500/10',
+            },
+        };
+
+        const handleScan = async () => {
+            const description = descriptionInput.value;
+            if (!description.trim()) {
+                resultContainer.innerHTML = '<div class="text-center p-4 bg-red-500/10 border border-red-500/30 text-red-400 rounded-lg">Please paste the extension description before scanning.</div>';
+                return;
+            }
+
+            scanButton.disabled = true;
+            scanButton.textContent = 'Scanning...';
+            resultContainer.innerHTML = `
+                <div class="text-center p-8 bg-brand-dark-secondary rounded-lg">
+                    <div class="flex justify-center items-center">
+                        <svg class="animate-spin h-8 w-8 text-brand-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <p class="ml-4 text-xl text-brand-light">Analyzing...</p>
+                    </div>
+                </div>`;
+
+            try {
+                const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+                const responseSchema = {
+                    type: Type.OBJECT,
+                    properties: {
+                        risk_level: { type: Type.STRING, description: 'Must be one of: Low, Medium, High.' },
+                        summary: { type: Type.STRING },
+                        potential_risks: { type: Type.ARRAY, items: { type: Type.STRING } },
+                    },
+                    required: ['risk_level', 'summary', 'potential_risks'],
+                };
+
+                const response = await ai.models.generateContent({
+                    model: 'gemini-2.5-flash',
+                    contents: `Analyze the following browser extension description for potential privacy and security risks. Focus on data collection, permissions, and third-party communications. Here is the description: "${description}"`,
+                    config: {
+                        systemInstruction: 'You are a cybersecurity expert specializing in browser extension analysis. Your response must be in JSON format conforming to the provided schema.',
+                        responseMimeType: 'application/json',
+                        responseSchema: responseSchema,
+                    },
+                });
+                
+                let jsonStr = response.text.trim();
+                const result = JSON.parse(jsonStr);
+                
+                const style = riskStyles[result.risk_level] || riskStyles.Medium;
+                const risksHtml = result.potential_risks.length > 0 
+                    ? result.potential_risks.map(risk => `<li>${risk}</li>`).join('')
+                    : '<li>No significant risks identified based on the description.</li>';
+
+                resultContainer.innerHTML = `
+                    <div class="p-8 rounded-xl border ${style.borderColor} ${style.bgColor} animate-fade-in-up">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-6">
+                            ${style.icon}
+                            <div>
+                                <h3 class="text-2xl font-bold ${style.textColor}">Risk Level: ${result.risk_level}</h3>
+                                <p class="text-brand-light-secondary">${result.summary}</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white mb-3">Potential Risks Identified:</h4>
+                            <ul class="list-disc list-inside space-y-2 text-brand-light-secondary">
+                                ${risksHtml}
+                            </ul>
+                        </div>
+                    </div>`;
+
+            } catch (e) {
+                console.error(e);
+                resultContainer.innerHTML = '<div class="text-center p-4 bg-red-500/10 border border-red-500/30 text-red-400 rounded-lg">Failed to analyze the extension. The AI may be overloaded. Please try again later.</div>';
+            } finally {
+                scanButton.disabled = false;
+                scanButton.textContent = 'Scan for Risks Now';
+            }
+        };
+
+        scanButton.addEventListener('click', handleScan);
+        document.querySelector('footer p').innerHTML = `&copy; ${new Date().getFullYear()} PrivSurf. All rights reserved. Your privacy is our priority.`;
+    </script>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>
