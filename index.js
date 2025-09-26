@@ -111,7 +111,7 @@ const App = () => {
 
       <footer class="bg-brand-dark-secondary border-t border-brand-dark-secondary/50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-brand-light-secondary">
-          <p>&copy; ${new Date().getFullYear()} PrivSurf. All rights reserved.</p>
+          <p>PrivSurf 2025. All rights reserved.</p>
           <p class="mt-2">Contact us: <a href="mailto:info@privsurf.com" class="text-brand-blue hover:underline">info@privsurf.com</a></p>
         </div>
       </footer>
