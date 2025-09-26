@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="https://privsurf.com/logo_outline_thick_dark.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PrivSurf - Your All-in-One Privacy & Security Solution</title>
+    <title>PrivSurf - Secure the Enterprise Browser</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -21,7 +22,9 @@
             },
             animation: {
               'gradient-bg': 'gradient-bg 15s ease infinite',
-              'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+              'fade-in-up': 'fade-in-up 0.8s ease-out',
+              'travel-direct': 'travel 2s linear infinite',
+              'travel-proxy': 'travel 5s linear infinite',
             },
             keyframes: {
               'gradient-bg': {
@@ -37,6 +40,10 @@
                   opacity: '1',
                   transform: 'translateY(0)',
                 },
+              },
+              'travel': {
+                '0%': { 'offset-distance': '0%' },
+                '100%': { 'offset-distance': '100%' },
               },
             },
              backgroundSize: {
@@ -58,280 +65,18 @@
   <script type="importmap">
 {
   "imports": {
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.17.0"
+    "preact": "https://esm.sh/preact@10.22.1",
+    "preact/hooks": "https://esm.sh/preact@10.22.1/hooks",
+    "htm/preact": "https://esm.sh/htm@3.1.1/preact",
+    "preact/": "https://aistudiocdn.com/preact@^10.27.2/",
+    "htm/": "https://aistudiocdn.com/htm@^3.1.1/"
   }
 }
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-brand-dark text-brand-light font-sans antialiased">
-    <div id="root">
-        <header class="bg-brand-dark/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-brand-dark-secondary/50">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-20">
-                    <div class="flex items-center space-x-3">
-                         <img src="logo_outline_thick_dark.png" alt="PrivSurf Logo" class="h-10 w-auto">
-                        <span class="text-2xl font-bold text-white">PrivSurf</span>
-                    </div>
-                    <div class="bg-brand-dark-secondary p-1 rounded-full flex items-center space-x-1">
-                        <button id="personal-tab-button" class="px-4 py-1.5 text-sm font-semibold rounded-full bg-brand-blue text-white transition-colors duration-300">Personal</button>
-                        <button id="business-tab-button" class="px-4 py-1.5 text-sm font-semibold rounded-full text-brand-light-secondary hover:bg-gray-700/50 transition-colors duration-300">Business</button>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <main class="pt-20">
-            <!-- Hero Section -->
-            <section class="relative overflow-hidden text-center py-20 md:py-32">
-                 <div class="absolute inset-0 bg-gradient-to-br from-brand-blue/10 via-brand-purple/10 to-brand-dark animate-gradient-bg bg-300%"></div>
-                 <div class="absolute inset-0 bg-brand-dark/50"></div>
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-fade-in-up" style="animation-delay: 0.2s;">
-                        Browse with Confidence.
-                    </h1>
-                    <p class="max-w-3xl mx-auto text-lg md:text-xl text-brand-light-secondary mb-8 animate-fade-in-up" style="animation-delay: 0.4s;">
-                        PrivSurf is your all-in-one browser companion that puts you back in control of your digital footprint. Enjoy a safer, faster, and more private internet experience.
-                    </p>
-                </div>
-            </section>
-            
-            <div id="personal-content">
-              <section class="py-20 bg-brand-dark-secondary">
-                  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                      <div class="text-center mb-16">
-                          <h2 class="text-3xl md:text-4xl font-extrabold text-white">Why Choose PrivSurf for Personal Use?</h2>
-                          <p class="max-w-2xl mx-auto mt-4 text-lg text-brand-light-secondary">Take control of your personal browsing with powerful, on-device tools.</p>
-                      </div>
-                      <div class="grid lg:grid-cols-2 gap-16 items-center">
-                          <!-- Left Column: Animation -->
-                          <div class="text-center">
-                              <h3 class="text-2xl font-bold text-white mb-4">Your Data Stays With You</h3>
-                              <div class="flex-grow flex items-center justify-center p-4" aria-hidden="true">
-                                <svg width="100%" height="200px" viewBox="0 0 200 100">
-                                    <title>Animation showing PrivSurf protecting data by blocking incoming threats and outgoing data leaks.</title>
-                                    <!-- Orbit Path -->
-                                    <path id="orbit" d="M 100, 50 m -45, 0 a 45,30 0 1,0 90,0 a 45,30 0 1,0 -90,0" fill="none" stroke="rgba(56, 139, 253, 0.2)" stroke-width="1"/>
-                                    <!-- Central Device -->
-                                    <g transform="translate(88, 38) scale(1.1)">
-                                        <path d="M4 2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" fill="#388BFD"/>
-                                        <path d="M4.5 14a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-15z" fill="#C9D1D9"/>
-                                    </g>
-                                    <!-- Safe Data inside -->
-                                    <g fill="#8B949E">
-                                        <circle cx="100" cy="50" r="2.5"><animate attributeName="cx" dur="10s" values="100;95;105;100" repeatCount="indefinite" /></circle>
-                                        <rect x="85" y="45" width="5" height="5"><animateTransform attributeName="transform" type="rotate" from="0 87.5 47.5" to="360 87.5 47.5" dur="12s" repeatCount="indefinite"/></rect>
-                                        <path d="M110 55 l2.5 2.5 l-2.5 2.5 l-2.5 -2.5z"><animate attributeName="cy" dur="8s" values="55;52;58;55" repeatCount="indefinite" /></path>
-                                    </g>
-                                    <!-- PrivSurf Shield -->
-                                    <g>
-                                      <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" fill="#388BFD" transform="scale(0.9)">
-                                        <animateMotion dur="6s" repeatCount="indefinite" rotate="auto">
-                                            <mpath xlink:href="#orbit"/>
-                                        </animateMotion>
-                                      </path>
-                                    </g>
-                                    <!-- External Threats -->
-                                    <g fill="#F87171" opacity="0.8">
-                                        <path d="M10 10 l5 5 l-5 5">
-                                            <animateMotion dur="5s" begin="0s" repeatCount="indefinite" path="M10,10 C 25,15 35,25 40,30" fill="freeze"/>
-                                            <animate attributeName="opacity" dur="5s" begin="0s" values="0;1;0" keyTimes="0;0.7;1" repeatCount="indefinite"/>
-                                        </path>
-                                        <path d="M190 80 l-5 -5 l5 -5">
-                                            <animateMotion dur="5.5s" begin="-1s" repeatCount="indefinite" path="M190,90 C 175,85 165,75 160,70" fill="freeze"/>
-                                            <animate attributeName="opacity" dur="5.5s" begin="-1s" values="0;1;0" keyTimes="0;0.7;1" repeatCount="indefinite"/>
-                                        </path>
-                                        <circle r="3">
-                                            <animateMotion dur="4.5s" begin="-2s" repeatCount="indefinite" path="M10,90 C 25,85 35,75 40,70" fill="freeze"/>
-                                            <animate attributeName="opacity" dur="4.5s" begin="-2s" values="0;1;0" keyTimes="0;0.7;1" repeatCount="indefinite"/>
-                                        </circle>
-                                    </g>
-                                     <!-- Data Leak Attempts -->
-                                    <g fill="#FBBF24" opacity="0.9">
-                                      <path d="M-2.5,2.5 L2.5,2.5 L0,-2.5 z" transform="scale(1.2)">
-                                          <animateMotion dur="6s" begin="-1.5s" repeatCount="indefinite" path="M100,42 C 100,38 100,32 100,28" fill="freeze"/>
-                                          <animate attributeName="opacity" dur="6s" begin="-1.5s" values="0;1;0" keyTimes="0;0.5;1" repeatCount="indefinite"/>
-                                      </path>
-                                      <rect width="4" height="4">
-                                          <animateMotion dur="5.5s" begin="-3s" repeatCount="indefinite" path="M105,55 L120,62" fill="freeze"/>
-                                          <animate attributeName="opacity" dur="5.5s" begin="-3s" values="0;1;0" keyTimes="0;0.6;1" repeatCount="indefinite"/>
-                                      </rect>
-                                      <circle r="2">
-                                           <animateMotion dur="6.5s" begin="-4s" repeatCount="indefinite" path="M95,58 L80,68" fill="freeze"/>
-                                           <animate attributeName="opacity" dur="6.5s" begin="-4s" values="0;1;0" keyTimes="0;0.6;1" repeatCount="indefinite"/>
-                                      </circle>
-                                    </g>
-                                </svg>
-                              </div>
-                              <p class="text-brand-light-secondary max-w-md mx-auto">PrivSurf processes everything locally. Your data is never uploaded, creating an impenetrable shield for your digital life.</p>
-                          </div>
-                          <!-- Right Column: Features -->
-                          <div class="space-y-8">
-                               <div>
-                                  <h4 class="text-xl font-bold text-white mb-2">On-Device Privacy & Security</h4>
-                                  <p class="text-brand-light-secondary">Blocks ads and trackers locally and scans for malware and phishing threats in real-time. Your data never leaves your computer, ensuring complete confidentiality without sending your browsing history to the cloud.</p>
-                              </div>
-                               <div>
-                                  <h4 class="text-xl font-bold text-white mb-2">Instant Local Analysis</h4>
-                                  <p class="text-brand-light-secondary">Get an instant privacy score for any site, calculated directly in your browser. No data collection, ever.</p>
-                              </div>
-                              <div>
-                                  <h4 class="text-xl font-bold text-white mb-2">Enhances Your VPN</h4>
-                                  <p class="text-brand-light-secondary">A perfect partner for your VPN. While a VPN secures your connection, PrivSurf protects you from trackers and threats inside your browser where VPNs can't reach.</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="mt-20">
-                         <h3 class="text-2xl md:text-3xl font-extrabold text-white text-center mb-10">Comprehensive Personal Features</h3>
-                         <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-                            <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">Advanced Ad & Tracker Blocking</span></div>
-                            <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">AI-Powered Phishing & Malware Shield</span></div>
-                            <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">GenAI Data Redaction & Blocking</span></div>
-                            <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">Proactive Risky Extension Shield</span></div>
-                            <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">Controlled File Uploads</span></div>
-                            <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">Secure File Download Filtering</span></div>
-                             <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-blue flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">Block Specific Websites</span></div>
-                         </div>
-                      </div>
-                  </div>
-              </section>
-            </div>
-
-            <div id="business-content" class="hidden">
-                 <section class="py-20 bg-brand-dark-secondary">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                        <div class="text-center mb-12">
-                            <h2 class="text-3xl md:text-4xl font-extrabold text-white">Why PrivSurf is Essential for Your Business</h2>
-                            <p class="max-w-2xl mx-auto mt-4 text-lg text-brand-light-secondary">Secure your organization with zero-latency, on-device protection.</p>
-                        </div>
-                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <div class="bg-brand-dark p-8 rounded-xl border border-gray-800/50 transform hover:-translate-y-2 transition-transform duration-300">
-                                <h3 class="text-xl font-bold text-white mb-3">Seamless SASE & Firewall Integration</h3>
-                                <p class="text-brand-light-secondary">Instantly close security gaps in your existing infrastructure. PrivSurf works where your cloud security can't reach—on the device itself.</p>
-                            </div>
-                            <div class="bg-brand-dark p-8 rounded-xl border border-gray-800/50 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
-                                <h3 class="text-xl font-bold text-white mb-3">Zero Latency, Maximum Security</h3>
-                                <div class="mt-4 mb-4 h-28 relative font-sans">
-                                    <svg width="100%" height="100%" viewBox="0 0 200 75" aria-hidden="true">
-                                        <title>Animation showing PrivSurf's direct route vs traditional security's stopover route.</title>
-                                        <!-- Top Path (Traditional) -->
-                                        <text x="0" y="12" class="text-xs" fill="#8B949E">Traditional Security (SASE/Proxy)</text>
-                                        <path d="M 10 25 H 190" stroke="#8B949E" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
-                                        <!-- Stops -->
-                                        <circle cx="50" cy="25" r="3" fill="#8B949E"/>
-                                        <circle cx="90" cy="25" r="3" fill="#8B949E"/>
-                                        <circle cx="130" cy="25" r="3" fill="#8B949E"/>
-                                        <circle cx="170" cy="25" r="3" fill="#8B949E"/>
-                                        <!-- Moving Dot (Traditional) -->
-                                        <circle r="4" fill="#F87171">
-                                            <animateMotion 
-                                                dur="8s" 
-                                                repeatCount="indefinite" 
-                                                path="M 10 25 H 190" 
-                                                keyPoints="0; 0.22; 0.22; 0.44; 0.44; 0.66; 0.66; 0.88; 0.88; 1" 
-                                                keyTimes="0; 0.2; 0.3; 0.5; 0.6; 0.8; 0.85; 0.95; 0.97; 1" 
-                                                calcMode="linear" />
-                                        </circle>
-                                
-                                        <!-- Bottom Path (PrivSurf) -->
-                                        <text x="0" y="52" class="text-xs" fill="#C9D1D9">PrivSurf (On-Device)</text>
-                                        <line x1="10" y1="65" x2="190" y2="65" stroke="#2AAA8A" stroke-width="1.5" />
-                                        <!-- Moving Dot (PrivSurf) -->
-                                        <circle r="4" fill="#2AAA8A">
-                                             <animateMotion 
-                                                dur="2s" 
-                                                repeatCount="indefinite" 
-                                                path="M 10 65 H 190" />
-                                        </circle>
-                                    </svg>
-                                </div>
-                                <p class="text-brand-light-secondary text-sm">
-                                    Traditional security routes your data via slow cloud stopovers. PrivSurf provides a direct, on-device route for instant, frictionless protection.
-                                </p>
-                            </div>
-                            <div class="bg-brand-dark p-8 rounded-xl border border-gray-800/50 transform hover:-translate-y-2 transition-transform duration-300">
-                                <h3 class="text-xl font-bold text-white mb-3">Effortless Implementation</h3>
-                                <p class="text-brand-light-secondary">Deploy in minutes. PrivSurf requires no complex configuration, providing immediate protection across your organization.</p>
-                            </div>
-                        </div>
-                        <div class="mt-20">
-                            <h3 class="text-2xl md:text-3xl font-extrabold text-white text-center mb-10">Enterprise-Grade Features</h3>
-                            <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-                                <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">Advanced AI/ML Threat Detection</span></div>
-                                <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">GenAI Data Loss Prevention (DLP)</span></div>
-                                <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">Risky Extension & Shadow IT Control</span></div>
-                                <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">Policy-Based File Upload Restrictions</span></div>
-                                <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">File Type Download Controls</span></div>
-                                <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">Zero-Trust Browser Security</span></div>
-                                <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">Frictionless Experience via On-Device Processing</span></div>
-                                <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">Block Specific Websites</span></div>
-                                <div class="flex items-start space-x-3"><svg class="w-6 h-6 text-brand-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-brand-light">URL Filtering</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </main>
-        
-        <section id="contact" class="py-20 bg-brand-dark">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-white animate-fade-in-up">Get in Touch</h2>
-                    <p class="max-w-2xl mx-auto mt-4 text-lg text-brand-light-secondary animate-fade-in-up" style="animation-delay: 0.2s;">
-                        We'd love to hear from you. Whether you are a customer, a business looking for a partnership, or an investor, we are ready to connect.
-                    </p>
-                    <div class="mt-12 animate-fade-in-up" style="animation-delay: 0.4s;">
-                        <a href="mailto:Info@privsurf.com" class="inline-flex items-center space-x-3 bg-brand-dark-secondary border border-gray-800/50 rounded-full px-8 py-4 text-lg text-brand-light font-medium hover:bg-brand-blue hover:text-white transition-colors duration-300 transform hover:scale-105">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            <span>Info@privsurf.com</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="bg-brand-dark-secondary border-t border-gray-800/50">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-brand-light-secondary">
-                <p>&copy; 2024 PrivSurf. All rights reserved.</p>
-                <p class="text-sm mt-2">Your privacy is our priority. Your security is our mission.</p>
-            </div>
-        </footer>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Tab switching logic
-            const personalTabButton = document.getElementById('personal-tab-button');
-            const businessTabButton = document.getElementById('business-tab-button');
-            const personalContent = document.getElementById('personal-content');
-            const businessContent = document.getElementById('business-content');
-
-            personalTabButton.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                personalContent.classList.remove('hidden');
-                businessContent.classList.add('hidden');
-                
-                // Update button styles
-                personalTabButton.classList.add('bg-brand-blue', 'text-white');
-                personalTabButton.classList.remove('text-brand-light-secondary', 'hover:bg-gray-700/50');
-                
-                businessTabButton.classList.remove('bg-brand-green', 'text-white');
-                businessTabButton.classList.add('text-brand-light-secondary', 'hover:bg-gray-700/50');
-            });
-
-            businessTabButton.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                businessContent.classList.remove('hidden');
-                personalContent.classList.add('hidden');
-
-                // Update button styles
-                businessTabButton.classList.add('bg-brand-green', 'text-white');
-                businessTabButton.classList.remove('text-brand-light-secondary', 'hover:bg-gray-700/50');
-
-                personalTabButton.classList.remove('bg-brand-blue', 'text-white');
-                personalTabButton.classList.add('text-brand-light-secondary', 'hover:bg-gray-700/50');
-            });
-        });
-    </script>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
